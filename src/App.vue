@@ -1,12 +1,26 @@
 <template>
   <div id="app">
-    <router-view/>
+    <v-app id="inspire">
+      <site-header></site-header>
+      <v-content>
+        <router-view/>
+      </v-content>
+      <site-footer></site-footer>
+    </v-app>
   </div>
 </template>
 
 <script>
+import SiteHeader from './components/Header';
+import SiteFooter from './components/Footer';
+
+
 export default {
   name: 'App',
+  components: {
+    'site-header': SiteHeader,
+    'site-footer': SiteFooter,
+  },
 };
 </script>
 
@@ -17,5 +31,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.content{
+  margin-top:45px;
 }
 </style>
